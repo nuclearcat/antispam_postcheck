@@ -52,11 +52,18 @@ class antispam_postcheck extends rcube_plugin
 			} else {
 				$display = $p['message']->headers->others['received'][$n];
 			}
-			
+    		$attrib['id']    = 'antispam-infobox';
+    		$attrib['class'] = 'notice';
+    		//$attrib['style'] = 'display: none';
+
+			$msg = html::span(null, rcube::Q($display));
+			$p['content'][] = html::div($attrib, $msg . '&nbsp;');
+
+			/*
 			$p['content'][] = html::p(array('class' => 'aligned-buttons boxinformation'),
                     html::span(null, rcube::Q($display))
                 );
-
+			*/
 		}
     	return($p);
     }
