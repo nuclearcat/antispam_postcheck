@@ -1,0 +1,3 @@
+Add to config your headers like this
+$config['antispam_ignore_received'] = array('from localhost (localhost [127.0.0.1]) by somename.com (Postfix)', 'from othername.com ([127.0.0.1]) by localhost (othername.com [127.0.0.1]', 'from test.host.lb (unknown [80.83.18.18])');
+
